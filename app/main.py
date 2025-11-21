@@ -15,7 +15,15 @@ def sum_numbers(a: float, b: float):
     except:
         raise HTTPException(status_code=400, detail="Invalid numbers")
 
+## Multiplication Table of a numerber
+@app.get("/product")
+def multiply_numbers(a: float, b: float):
+    try:
+        return {"result": a * b}
+    except:
+        raise HTTPException(status_code=400, detail="Invalid numbers")
 
 # Api EndPoints
 # http://127.0.0.1:8000/health
 # http://127.0.0.1:8000/sum?a=3&b=5
+# http://127.0.0.1:8000/product?a=7&b=8
