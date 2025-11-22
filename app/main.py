@@ -25,17 +25,18 @@ def multiply_numbers(a: float, b: float):
         raise HTTPException(status_code=400, detail="Invalid numbers")
 
 
-# ## Division of two numbers
-# @app.get("/divide")
-# def divide_numbers(a: float, b: float):
-#     try:
-#         if b == 0:
-#             raise HTTPException(status_code=400, detail="Division by zero is not allowed")
-#         return {"result": a / b}
-#     except:
-#         raise HTTPException(status_code=400, detail="Invalid numbers")
+## Division of two numbers
+@app.get("/divide")
+def divide_numbers(a: float, b: float):
+    try:
+        if b == 0:
+            raise HTTPException(status_code=400, detail="Division by zero is not allowed")
+        return {"result": a / b}
+    except:
+        raise HTTPException(status_code=400, detail="Invalid numbers")
 
 # Api EndPoints
 # http://127.0.0.1:8000/health
 # http://127.0.0.1:8000/sum?a=3&b=5
 # http://127.0.0.1:8000/product?a=7&b=8
+# http://127.0.0.1:8000/divide?a=10&b=2
